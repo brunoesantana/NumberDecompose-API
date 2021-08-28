@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NumberDecompose.CrossCutting\NumberDecompose.CrossCutting.csproj" />
+    <ProjectReference Include="..\NumberDecompose.Data\NumberDecompose.Data.csproj" />
+  </ItemGroup>
+
+</Project>

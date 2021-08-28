@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.1.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.1.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NumberDecompose.Business\NumberDecompose.Business.csproj" />
+    <ProjectReference Include="..\NumberDecompose.CrossCutting\NumberDecompose.CrossCutting.csproj" />
+    <ProjectReference Include="..\NumberDecompose.Data\NumberDecompose.Data.csproj" />
+    <ProjectReference Include="..\NumberDecompose.Domain\NumberDecompose.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
