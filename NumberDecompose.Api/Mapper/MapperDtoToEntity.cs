@@ -9,6 +9,7 @@ namespace NumberDecompose.Mapper
         public MapperDtoToEntity()
         {
             CreateMap<NumberInsertDTO, Number>();
+            CreateMap<NumberUpdateDTO, Number>();
             CreateMap<NumberDTO, Number>();
         }
     }

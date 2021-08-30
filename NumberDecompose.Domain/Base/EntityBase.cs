@@ -19,12 +19,15 @@ namespace NumberDecompose.Domain.Base
         public Guid Id { get; set; }
 
         [Required]
+        [Column(TypeName = "DATETIME")]
         public DateTime Date { get; set; }
 
         [Required]
+        [Column(TypeName = "INT")]
         public int Version { get; set; }
 
         [Required]
+        [Column(TypeName = "BIT")]
         public bool Active { get; set; }
     }
 }

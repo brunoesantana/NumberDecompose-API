@@ -1,4 +1,5 @@
 ﻿using NumberDecompose.Business.Interface.Base;
+using NumberDecompose.CrossCutting.Exceptions;
 using NumberDecompose.Data.Interface.Base;
 using System;
 using System.Collections.Generic;
@@ -27,16 +28,14 @@ namespace NumberDecompose.Business.Base
         public virtual void Remove(Guid id)
         {
             if (Find(id) == null)
-                //throw new NotFoundException(); TODO
-                throw new Exception();
+                throw new NotFoundException();
 
             Repository.Remove(id);
         }
 
         public virtual T Find(Guid id)
         {
-            //return Repository.Find(id) ?? throw new NotFoundException(); TODO
-            return Repository.Find(id) ?? throw new Exception();
+            return Repository.Find(id) ?? throw new NotFoundException();
         }
 
         public virtual List<T> GetAll()

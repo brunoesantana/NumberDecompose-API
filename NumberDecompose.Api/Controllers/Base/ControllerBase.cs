@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace NumberDecompose.Controllers.Base
 {
-    public class ControllerBase<T, TDto, TInsertDto, TUpdateDto> : ControllerBase where T : class where TDto : class where TInsertDto : class where TUpdateDto : BaseUpdateDTO
+    public class ControllerBase<T, TDto, TResumedDto, TInsertDto, TUpdateDto> : ControllerBase where T : class where TDto : class where TResumedDto : class where TInsertDto : class where TUpdateDto : BaseUpdateDTO
     {
         protected readonly IServiceBase<T> _service;
 
@@ -60,7 +60,7 @@ namespace NumberDecompose.Controllers.Base
         protected ActionResult GetAll()
         {
             var response = _service.GetAll();
-            return response.Any() ? Ok(MapperHelper.Map<List<T>, List<TDto>>(response)) : throw new NotFoundException();
+            return response.Any() ? Ok(MapperHelper.Map<List<T>, List<TResumedDto>>(response)) : throw new NotFoundException();
         }
     }
 }
