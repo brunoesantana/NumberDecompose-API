@@ -15,7 +15,7 @@ namespace NumberDecompose.Controllers
         {
         }
 
-        [HttpGet]
+        [HttpGet("decompose")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
