@@ -1,0 +1,38 @@
+version: "3.8"
+
+volumes:
+  sqlvolume:
+
+networks:
+  mssqlNet:
+  numberdecomposeNet:
+
+services:
+  mssql:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    container_name: "mssql"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlvolume:/var/opt/mssql
+    networks:
+      - mssqlNet
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=235245M@is
+      - MSSQL_PID=Express
+  
+  numberdecompose:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: numberdecompose
+    networks:
+      - mssqlNet
+      - numberdecomposeNet
+    ports:
+      - 1864:80
+    environment:
+      - DBHOST=mssql
+    depends_on:
+      - mssql

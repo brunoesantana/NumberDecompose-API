@@ -45,7 +45,7 @@ namespace NumberDecompose
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Number Decompose API");
-                //c.RoutePrefix = string.Empty;
+                c.RoutePrefix = string.Empty;
             });
 
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());

@@ -12,7 +12,8 @@ namespace NumberDecompose.Data.Context
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseLazyLoadingProxies();
-                optionsBuilder.UseSqlServer("Server=BRUNOPC\\SQLEXPRESS;Database=number_decompose;Trusted_Connection=True");
+                optionsBuilder.UseSqlServer("Server=localhost,1433;Database=number_decompose;User Id=sa;Password=235245M@is");
+                //optionsBuilder.UseSqlServer("Server=172.18.0.2,1433;Database=number_decompose;User Id=sa;Password=235245M@is"); ip que o container do banco esta rodando
             }
 
             base.OnConfiguring(optionsBuilder);
